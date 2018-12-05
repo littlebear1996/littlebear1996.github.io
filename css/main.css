@@ -1920,7 +1920,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff0d;
+  background: #c6ffff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2817,6 +2817,10 @@ embed {
 }
 .site-author-name {
   display: block;
+  margin: 10px;
+  text-align: center;
+  color: rgba(218,251,255,0.71);
+  font-weight: bold;
 }
 .site-description {
   letter-spacing: 5px;
