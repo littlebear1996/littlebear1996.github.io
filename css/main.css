@@ -1920,7 +1920,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fff;
+  background: #334737;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2827,7 +2827,7 @@ embed {
   font-weight: bold;
   margin-top: 15px;
   margin-left: 13px;
-  color: #f37055;
+  color: #008876;
 }
 .site-state {
   line-height: 1.3;
