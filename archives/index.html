@@ -652,6 +652,28 @@ show_date_time();
 
 
 
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'QH7cxWM4XLLPxu9EGh6V2T0F-gzGzoHsz',
+        appKey: 'JKn8mo6p75ocwBChqB5UFA35',
+        placeholder: '客官有什么问题嘛~~',
+        avatar:'/images/curry.jpg',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
 
 
   
