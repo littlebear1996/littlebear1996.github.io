@@ -1920,7 +1920,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff91ff;
+  background: #fff962;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2785,7 +2785,7 @@ embed {
 }
 .sidebar {
   box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.5);
-  background-color: rgba(0,0,0,0.75);
+  background: url("https://s1.ax1x.com/2018/12/05/Flk2NT.jpg");
 }
 .sidebar-inner {
   margin-top: 30px;
