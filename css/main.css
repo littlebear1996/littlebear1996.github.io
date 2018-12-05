@@ -1920,7 +1920,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fff962;
+  background: #4ec20e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2786,6 +2786,12 @@ embed {
 .sidebar {
   box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.5);
   background: url("https://s1.ax1x.com/2018/12/05/Flk2NT.jpg");
+  no-repeat: !important;
+  background-size: cover !important;
+  position: fixed !important;
+  right: 0 !important;
+  top: 0 !important;
+  bottom: 0 !important;
 }
 .sidebar-inner {
   margin-top: 30px;
