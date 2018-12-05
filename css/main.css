@@ -1920,7 +1920,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff04;
+  background: #9c037a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2905,4 +2905,10 @@ embed {
 }
 .header {
   background: transparent;
+}
+#days {
+  display: block;
+  color: #07b39b;
+  font-size: 13px;
+  margin-top: 15px;
 }
