@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="hexo,littlebear,博客">
+  <meta name="keywords" content="top,文章阅读量排行榜">
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="其实你知道，烦恼会解决烦恼">
+<meta name="description" content="博客文章阅读量排行榜">
+<meta name="keywords" content="top,文章阅读量排行榜">
 <meta property="og:type" content="website">
-<meta property="og:title" content="斯呆芬&#39;s BLOG">
-<meta property="og:url" content="http://yoursite.com/tags/helloworld/index.html">
+<meta property="og:title" content="TopX &#x2F;* 可以不为 TopX，随便取 *&#x2F;">
+<meta property="og:url" content="http://yoursite.com/top/index.html">
 <meta property="og:site_name" content="斯呆芬&#39;s BLOG">
-<meta property="og:description" content="其实你知道，烦恼会解决烦恼">
+<meta property="og:description" content="博客文章阅读量排行榜">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-06T08:29:30.063Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="斯呆芬&#39;s BLOG">
-<meta name="twitter:description" content="其实你知道，烦恼会解决烦恼">
+<meta name="twitter:title" content="TopX &#x2F;* 可以不为 TopX，随便取 *&#x2F;">
+<meta name="twitter:description" content="博客文章阅读量排行榜">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/helloworld/">
+  <link rel="canonical" href="http://yoursite.com/top/">
 
 
 
 
 
-  <title>标签: helloworld | 斯呆芬's BLOG</title>
+  <title>TopX /* 可以不为 TopX，随便取 */ | 斯呆芬's BLOG</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-right ">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -257,52 +259,65 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>helloworld<small>标签</small>
-        </h1>
-      </div>
+	<h1 class="post-title" itemprop="name headline">TopX /* 可以不为 TopX，随便取 */</h1>
+
+
+	<div class="post-meta">
+		<div class="post-description">博客文章阅读量排行榜</div>
+	</div>
+
+
+</header>
 
       
+      
+      
+      <div class="post-body">
         
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/12/03/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
-        
-      </h2>
+          <p><div id="top"></div></p>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script>AV.initialize("QH7cxWM4XLLPxu9EGh6V2T0F-gzGzoHsz", "JKn8mo6p75ocwBChqB5UFA35");</script>
+<script type="text/javascript">
+  var time=0
+  var title=""
+  var url=""
+  var query = new AV.Query('Counter');
+  query.notEqualTo('id',0);
+  query.descending('time');
+  query.limit(1000);
+  query.find().then(function (todo) {
+    for (var i=0;i<1000;i++){
+      var result=todo[i].attributes;
+      time=result.time;
+      title=result.title;
+      url=result.url;
+      var content="<a href='"+"https://littlebear1996.github.io"+url+"'>"+title+"</a>"+"<br />"+"<font color='#555'>"+"阅读次数："+time+"</font>"+"<br /><br />";
+      document.getElementById("top").innerHTML+=content
+    }
+  }, function (error) {
+    console.log("error");
+  });
+</script>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-03T10:22:25+08:00" content="2018-12-03">
-          12-03
-        </time>
+<style>.post-description { display: none; }</style>
+        
       </div>
-
-    </header>
-  </article>
-
-
+      
+      
       
     </div>
-
+    
+    
+    
   </div>
-  
-  
-  
-
-  
 
 
           </div>
@@ -598,6 +613,10 @@ show_date_time();
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
