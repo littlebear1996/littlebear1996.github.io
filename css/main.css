@@ -1920,7 +1920,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #90c952;
+  background: #8bff8e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2847,7 +2847,7 @@ embed {
   border-radius: 15px;
 }
 .feed-link a:hover {
-  background-color: #a166ab;
+  background-color: #3b544f;
 }
 .feed-link a i {
   color: #fff;
