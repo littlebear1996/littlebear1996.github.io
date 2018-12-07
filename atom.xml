@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://www.stepthen.site/"/>
+  <link href="http://stepthen.site/"/>
   <updated>2018-12-07T07:22:05.793Z</updated>
-  <id>http://www.stepthen.site/</id>
+  <id>http://stepthen.site/</id>
   
   <author>
     <name>Stepthen</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>测试文章</title>
-    <link href="http://www.stepthen.site/2018/12/07/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
-    <id>http://www.stepthen.site/2018/12/07/测试文章/</id>
+    <link href="http://stepthen.site/2018/12/07/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
+    <id>http://stepthen.site/2018/12/07/测试文章/</id>
     <published>2018-12-07T07:18:00.000Z</published>
     <updated>2018-12-07T07:22:05.793Z</updated>
     
@@ -34,17 +34,17 @@
     
     </summary>
     
-      <category term="测试版权" scheme="http://www.stepthen.site/categories/%E6%B5%8B%E8%AF%95%E7%89%88%E6%9D%83/"/>
+      <category term="测试版权" scheme="http://stepthen.site/categories/%E6%B5%8B%E8%AF%95%E7%89%88%E6%9D%83/"/>
     
     
-      <category term="-测试" scheme="http://www.stepthen.site/tags/%E6%B5%8B%E8%AF%95/"/>
+      <category term="-测试" scheme="http://stepthen.site/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://www.stepthen.site/2018/12/03/hello-world/"/>
-    <id>http://www.stepthen.site/2018/12/03/hello-world/</id>
+    <link href="http://stepthen.site/2018/12/03/hello-world/"/>
+    <id>http://stepthen.site/2018/12/03/hello-world/</id>
     <published>2018-12-03T02:22:25.644Z</published>
     <updated>2018-12-07T06:47:12.685Z</updated>
     
@@ -59,12 +59,12 @@
     
     </summary>
     
-      <category term="示例" scheme="http://www.stepthen.site/categories/%E7%A4%BA%E4%BE%8B/"/>
+      <category term="示例" scheme="http://stepthen.site/categories/%E7%A4%BA%E4%BE%8B/"/>
     
     
-      <category term="test" scheme="http://www.stepthen.site/tags/test/"/>
+      <category term="test" scheme="http://stepthen.site/tags/test/"/>
     
-      <category term="demo" scheme="http://www.stepthen.site/tags/demo/"/>
+      <category term="demo" scheme="http://stepthen.site/tags/demo/"/>
     
   </entry>
   
