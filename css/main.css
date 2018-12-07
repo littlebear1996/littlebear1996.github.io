@@ -1920,7 +1920,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff931d;
+  background: #90c952;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2931,6 +2931,10 @@ embed {
     margin: -93px 15px 50px 15px;
     padding: 96px 10px 0px 10px;
   }
+}
+.fa-rss:before {
+  content: "\f09e";
+  color: #28d0b8;
 }
 @-moz-keyframes heartAnimate {
   0%, 100% {
