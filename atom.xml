@@ -18,8 +18,8 @@
   
   <entry>
     <title>测试文章</title>
-    <link href="http://stepthen.site/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0.html"/>
-    <id>http://stepthen.site/测试文章.html</id>
+    <link href="http://stepthen.site/2018/12/07/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/"/>
+    <id>http://stepthen.site/2018/12/07/测试文章/</id>
     <published>2018-12-07T07:18:00.000Z</published>
     <updated>2018-12-07T07:22:05.793Z</updated>
     
@@ -43,8 +43,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://stepthen.site/hello-world.html"/>
-    <id>http://stepthen.site/hello-world.html</id>
+    <link href="http://stepthen.site/2018/12/03/hello-world/"/>
+    <id>http://stepthen.site/2018/12/03/hello-world/</id>
     <published>2018-12-03T02:22:25.644Z</published>
     <updated>2018-12-10T08:34:18.552Z</updated>
     
