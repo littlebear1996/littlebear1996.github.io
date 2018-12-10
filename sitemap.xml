@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://stepthen.site/hello-world.html</loc>
+    
+    <lastmod>2018-12-10T08:34:18.552Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://stepthen.site/google0774ddc9680f58f8.html</loc>
     
     <lastmod>2018-12-10T03:02:25.682Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://stepthen.site/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0.html</loc>
     
     <lastmod>2018-12-07T07:22:05.793Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://stepthen.site/hello-world.html</loc>
-    
-    <lastmod>2018-12-07T06:47:12.685Z</lastmod>
     
   </url>
   
