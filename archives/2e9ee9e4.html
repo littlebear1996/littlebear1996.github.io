@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta name="baidu-site-verification" content="sahxbk557n">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="google-site-verification" content="_CeoJMetRB7GKYXwFVev9Yck6wHtr0A83gp0teAUVVM">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="BPMN,工作流，AngularJS，前端">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="斯呆芬's BLOG" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="这是一个基于前端AngularJS框架并且集成了BPMN-JS的教程">
+<meta name="keywords" content="BPMN,工作流，AngularJS，前端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于前端的AngularJS集成BPMN（1）">
+<meta property="og:url" content="http://stepthen.site/archives/2e9ee9e4.html">
+<meta property="og:site_name" content="斯呆芬&#39;s BLOG">
+<meta property="og:description" content="这是一个基于前端AngularJS框架并且集成了BPMN-JS的教程">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://f.cangg.cn:82/data/201812111556494477.png">
+<meta property="og:image" content="https://f.cangg.cn:82/data/201812111557406052.png">
+<meta property="og:image" content="https://f.cangg.cn:82/data/201812111558332215.png">
+<meta property="og:image" content="https://f.cangg.cn:82/data/201812111559327408.jpeg">
+<meta property="og:image" content="https://f.cangg.cn:82/data/201812111559586293.png">
+<meta property="og:image" content="https://f.cangg.cn:82/data/201812111600391067.png">
+<meta property="og:updated_time" content="2018-12-11T08:02:15.899Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="基于前端的AngularJS集成BPMN（1）">
+<meta name="twitter:description" content="这是一个基于前端AngularJS框架并且集成了BPMN-JS的教程">
+<meta name="twitter:image" content="https://f.cangg.cn:82/data/201812111556494477.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://stepthen.site/archives/2e9ee9e4.html">
+
+
+
+
+
+  <title>基于前端的AngularJS集成BPMN（1） | 斯呆芬's BLOG</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">斯呆芬's BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-weibo"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-top">
+          <a href="/top/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-signal"></i> <br>
+            
+            按热度
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://stepthen.site/archives/2e9ee9e4.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Stepthen">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/curry.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="斯呆芬's BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">基于前端的AngularJS集成BPMN（1）</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-11T09:35:36+08:00">
+                2018-12-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/archives/2e9ee9e4.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/archives/2e9ee9e4.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/archives/2e9ee9e4.html" class="leancloud_visitors" data-flag-title="基于前端的AngularJS集成BPMN（1）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  这是一个基于前端AngularJS框架并且集成了BPMN-JS的教程
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>由于公司工作需要，所以需要将BPMN-JS（主要用于工作流绘制）集成在AngularJS这个前端框架下，所以接下来的几篇我会通过详细的描述来介绍如何在AngularJS框架下面成功的运行BPMN且绘制工作流。</p>
+<h1 id="明人不说暗话，我们开始吧"><a href="#明人不说暗话，我们开始吧" class="headerlink" title="明人不说暗话，我们开始吧"></a>明人不说暗话，我们开始吧</h1><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ul>
+<li>BPMN-JS:Business Process Modeling Notation主要针对业务流程建模的，通过这个项目可以通过前台web定义与查看标准的BPMN2.0模型，在这里先贴出BPMN-JS在github的官方<a href="https://github.com/bpmn-io/bpmn-js" target="_blank" rel="noopener">仓库</a>，本教程也是基于官方文档一步一步完成的。</li>
+</ul>
+<p>首先给大家看看bpmn.io官方的绘制界面：</p>
+<p>  <img src="https://f.cangg.cn:82/data/201812111556494477.png" alt="image-20181211145403846"></p>
+<p>我们的目的是将此绘制界面集成在AngularJS框架下面</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>在AngularJS下完成一个页面需要声明三个文件，如图<img src="https://f.cangg.cn:82/data/201812111557406052.png" alt="image-20181211150057430"></p>
+<p>其中bpmn-demo.component.ts这个是展示与操作核心，通过在init()方法中BpmnModeler，来初始化展示BPMN-JS编辑页面，同时支持将编辑的任务流图BPMN导出XML(saveDiagram)与SVG(saveSVG).</p>
+<h3 id="1-在Angular项目中下载所需model包："><a href="#1-在Angular项目中下载所需model包：" class="headerlink" title="1.在Angular项目中下载所需model包："></a>1.在Angular项目中下载所需model包：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install bpmn-js --save</span><br></pre></td></tr></table></figure>
+<h3 id="2-同时我们需要配置bpmn-js的样式修改项目中根目录的angular-json文件并且在styles中加上下面梁行代码："><a href="#2-同时我们需要配置bpmn-js的样式修改项目中根目录的angular-json文件并且在styles中加上下面梁行代码：" class="headerlink" title="2.同时我们需要配置bpmn-js的样式修改项目中根目录的angular.json文件并且在styles中加上下面梁行代码："></a>2.同时我们需要配置bpmn-js的样式修改项目中根目录的angular.json文件并且在styles中加上下面梁行代码：</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"node_modules/bpmn-js/dist/assets/diagram-js.css"</span>,</span><br><span class="line"><span class="string">"node_modules/bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css"</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://f.cangg.cn:82/data/201812111558332215.png" alt="image-20181211151413117"></p>
+<h3 id="3-这里也是核心的一步，定义组件bpmn-demo-component-ts，用于bpmn前台绘制页面以及绘制出的任务流导出，通过在init-方法中BpmnModeler，来初始化展示BPMN-JS编辑页面，同时支持将编辑的任务流图BPMN导出XML-saveDiagram-与SVG-saveSVG-，bpmn-demo-component-ts完整代码如下："><a href="#3-这里也是核心的一步，定义组件bpmn-demo-component-ts，用于bpmn前台绘制页面以及绘制出的任务流导出，通过在init-方法中BpmnModeler，来初始化展示BPMN-JS编辑页面，同时支持将编辑的任务流图BPMN导出XML-saveDiagram-与SVG-saveSVG-，bpmn-demo-component-ts完整代码如下：" class="headerlink" title="3.这里也是核心的一步，定义组件bpmn-demo.component.ts，用于bpmn前台绘制页面以及绘制出的任务流导出，通过在init()方法中BpmnModeler，来初始化展示BPMN-JS编辑页面，同时支持将编辑的任务流图BPMN导出XML(saveDiagram)与SVG(saveSVG)，bpmn-demo.component.ts完整代码如下："></a>3.这里也是核心的一步，定义组件bpmn-demo.component.ts，用于bpmn前台绘制页面以及绘制出的任务流导出，通过在init()方法中BpmnModeler，来初始化展示BPMN-JS编辑页面，同时支持将编辑的任务流图BPMN导出XML(saveDiagram)与SVG(saveSVG)，bpmn-demo.component.ts完整代码如下：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;Component, OnInit&#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;HttpClient,HttpHeaders&#125; <span class="keyword">from</span> <span class="string">'@angular/common/http'</span>;</span><br><span class="line"><span class="keyword">import</span> BpmnModeler <span class="keyword">from</span> <span class="string">'bpmn-js/lib/Modeler.js'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;DomSanitizer&#125; <span class="keyword">from</span> <span class="string">"@angular/platform-browser"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123;RequestBackService&#125; <span class="keyword">from</span> <span class="string">'../../../service/requestBack.service'</span>;</span><br><span class="line"></span><br><span class="line">@Component(&#123;</span><br><span class="line">    selector: <span class="string">'app-bpmn-demo'</span>,</span><br><span class="line">    templateUrl: <span class="string">'./bpmn-demo.component.html'</span>,</span><br><span class="line">    styleUrls: [<span class="string">'./bpmn-demo.component.scss'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">BpmnDemoComponent</span> <span class="title">implements</span> <span class="title">OnInit</span> </span>&#123;</span><br><span class="line">    saveHref;</span><br><span class="line">    saveName = <span class="string">''</span>;</span><br><span class="line">    modeler;</span><br><span class="line">    <span class="keyword">constructor</span>(private http: RequestBackService,private https: HttpClient, private sanitizer: DomSanitizer) &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ngOnInit(): <span class="keyword">void</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.modeler = <span class="keyword">new</span> BpmnModeler(&#123;</span><br><span class="line">            container: <span class="string">'#canvas'</span>,</span><br><span class="line">            width: <span class="string">'100%'</span>,</span><br><span class="line">            height: <span class="string">'600px'</span>,</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">this</span>.load();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    handleError(err: any) &#123;</span><br><span class="line">        <span class="keyword">if</span> (err) &#123;</span><br><span class="line">            <span class="built_in">console</span>.warn(<span class="string">'Ups, error: '</span>, err);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    load(): <span class="keyword">void</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> url = <span class="string">'assets/bpmn/newDiagram.bpmn'</span>;</span><br><span class="line">        <span class="keyword">this</span>.https.get(url, &#123;</span><br><span class="line">            headers: &#123;<span class="attr">observe</span>: <span class="string">'response'</span>&#125;, <span class="attr">responseType</span>: <span class="string">'text'</span></span><br><span class="line">        &#125;).subscribe(</span><br><span class="line">            (x: any) =&gt; &#123;</span><br><span class="line">                <span class="keyword">this</span>.modeler.importXML(x, <span class="keyword">this</span>.handleError);</span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="keyword">this</span>.handleError</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    save(): <span class="keyword">void</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.modeler.saveXML(<span class="function">(<span class="params">err: any, xml: any</span>) =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'Result of saving XML: '</span>, err, xml));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    saveDiagram(e) &#123;</span><br><span class="line">        <span class="keyword">this</span>.modeler.saveXML(&#123;<span class="attr">format</span>: <span class="literal">true</span>&#125;, (err, xml) =&gt; &#123;</span><br><span class="line">            <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                <span class="built_in">console</span>.error(err);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">this</span>.setEncoded(xml, <span class="string">'bpmn.xml'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        e.preventDefault();</span><br><span class="line">        e.stopPropagation();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    saveSVG(e) &#123;</span><br><span class="line">        <span class="keyword">this</span>.modeler.saveSVG(<span class="function">(<span class="params">err, svg</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                <span class="built_in">console</span>.error(err);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">this</span>.setEncoded(svg, <span class="string">'bpmn.svg'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        e.preventDefault();</span><br><span class="line">        e.stopPropagation();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    setEncoded(data, name) &#123;</span><br><span class="line">        <span class="keyword">const</span> encodedData = <span class="built_in">encodeURIComponent</span>(data);</span><br><span class="line">        <span class="keyword">if</span> (data) &#123;</span><br><span class="line">            <span class="keyword">this</span>.saveHref = <span class="keyword">this</span>.sanitizer.bypassSecurityTrustResourceUrl(<span class="string">'data:application/bpmn20-xml;charset=UTF-8,'</span> + encodedData);</span><br><span class="line">            <span class="keyword">this</span>.saveName = name;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意在loan()方法中有一行代码</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> url = <span class="string">'assets/bpmn/newDiagram.bpmn'</span>;</span><br></pre></td></tr></table></figure>
+<p>所以我们需要在assets文件夹下面创建一个bpmn资源文件夹并且初始化一个名为newDiagram.bpmn的工作流文件（XML格式），如果我们没有初始化这个文件最终完成的绘制页面将不能进行工作流绘制就像下图：</p>
+<p><img src="https://f.cangg.cn:82/data/201812111559327408.jpeg" alt="image-20181211152700056"></p>
+<p>所以我们需要在如上所示路径中初始化一个bpmn文件并且初始设置一个start event，如下图：</p>
+<p><img src="https://f.cangg.cn:82/data/201812111559586293.png" alt="image-20181211153133840"></p>
+<h3 id="4-接下来是编写前台代码bpmn-demo-component-html，其代码如下："><a href="#4-接下来是编写前台代码bpmn-demo-component-html，其代码如下：" class="headerlink" title="4.接下来是编写前台代码bpmn-demo.component.html，其代码如下："></a>4.接下来是编写前台代码bpmn-demo.component.html，其代码如下：</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"modeler"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"canvas"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"buttons"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">"js-download-diagram"</span> <span class="attr">href</span> <span class="attr">title</span>=<span class="string">"download BPMN diagram"</span> <span class="attr">class</span>=<span class="string">"active"</span> (<span class="attr">click</span>)=<span class="string">"saveDiagram($event)"</span>&gt;</span></span><br><span class="line">      BPMN diagram</span><br><span class="line">    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">"js-download-svg"</span> <span class="attr">href</span> <span class="attr">title</span>=<span class="string">"download as SVG image"</span> <span class="attr">class</span>=<span class="string">"active"</span> (<span class="attr">click</span>)=<span class="string">"saveSVG($event)"</span>&gt;</span></span><br><span class="line">      SVG image</span><br><span class="line">    <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> *<span class="attr">ngIf</span>=<span class="string">"saveHref"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">"download"</span> [<span class="attr">href</span>]=<span class="string">"saveHref"</span> [<span class="attr">download</span>]=<span class="string">"saveName"</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span>下载<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-src-styles-scss代码如下："><a href="#5-src-styles-scss代码如下：" class="headerlink" title="5.src/styles.scss代码如下："></a>5.src/styles.scss代码如下：</h3><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* You can add global styles to this file, and also import other style files */</span></span><br><span class="line">* &#123;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span>,</span><br><span class="line"><span class="selector-tag">html</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">"Helvetica Neue"</span>, Helvetica, Arial, sans-serif;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">12px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">a</span>:link &#123;</span><br><span class="line">  <span class="attribute">text-decoration</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content</span>,</span><br><span class="line"><span class="selector-class">.content</span>&gt;<span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content</span>&gt;<span class="selector-class">.message</span> &#123;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">display</span>: table;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#111</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content</span>&gt;<span class="selector-class">.message</span> <span class="selector-class">.note</span> &#123;</span><br><span class="line">  <span class="attribute">vertical-align</span>: middle;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">display</span>: table-cell;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content</span> <span class="selector-class">.error</span> <span class="selector-class">.details</span> &#123;</span><br><span class="line">  <span class="attribute">max-width</span>: <span class="number">500px</span>;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">12px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">20px</span> auto;</span><br><span class="line">  <span class="attribute">text-align</span>: left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content</span> <span class="selector-class">.error</span> <span class="selector-tag">pre</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: solid <span class="number">1px</span> <span class="number">#CCC</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#EEE</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content</span>:not(<span class="selector-class">.with-error</span>) <span class="selector-class">.error</span>,</span><br><span class="line"><span class="selector-class">.content</span><span class="selector-class">.with-error</span> <span class="selector-class">.intro</span>,</span><br><span class="line"><span class="selector-class">.content</span><span class="selector-class">.with-diagram</span> <span class="selector-class">.intro</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">1000px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content</span> <span class="selector-class">.canvas</span>,</span><br><span class="line"><span class="selector-class">.content</span><span class="selector-class">.with-error</span> <span class="selector-class">.canvas</span> &#123;</span><br><span class="line">  <span class="attribute">visibility</span>: hidden;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content</span><span class="selector-class">.with-diagram</span> <span class="selector-class">.canvas</span> &#123;</span><br><span class="line">  <span class="attribute">visibility</span>: visible;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">1000px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.buttons</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">20px</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.buttons</span>&gt;<span class="selector-tag">li</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">margin-right</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.buttons</span>&gt;<span class="selector-tag">li</span>&gt;<span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#DDD</span>;</span><br><span class="line">  <span class="attribute">border</span>: solid <span class="number">1px</span> <span class="number">#666</span>;</span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">5px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.buttons</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">0.3</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.buttons</span> <span class="selector-tag">a</span><span class="selector-class">.active</span> &#123;</span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">1.0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="6-以上一切完成后我们基于AngularJS的BPMN绘制页面已经完成接下来启动项目进入相应页面即可看到如下页面表示已经成功完成："><a href="#6-以上一切完成后我们基于AngularJS的BPMN绘制页面已经完成接下来启动项目进入相应页面即可看到如下页面表示已经成功完成：" class="headerlink" title="6.以上一切完成后我们基于AngularJS的BPMN绘制页面已经完成接下来启动项目进入相应页面即可看到如下页面表示已经成功完成："></a>6.以上一切完成后我们基于AngularJS的BPMN绘制页面已经完成接下来启动项目进入相应页面即可看到如下页面表示已经成功完成：</h3><p><img src="https://f.cangg.cn:82/data/201812111600391067.png" alt="image-20181211154556095"></p>
+<p><strong><em>如果您成功的出现如上页面，说明基于AngularJS的工作流绘制初步你已经成功告破，接下来的下一篇我会继续集成属性编辑页面以及如何向后台进行部署等相关操作。</em></strong></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:&nbsp;&nbsp;</span><a href="/archives/2e9ee9e4.html">基于前端的AngularJS集成BPMN（1）</a></p>
+  <p><span>文章作者:&nbsp;&nbsp;</span><a href="/" title="访问 Stepthen 的个人博客">Stepthen</a></p>
+  <p><span>发布时间:&nbsp;&nbsp;</span>2018年12月11日 - 09:12</p>
+  <p><span>最后更新:&nbsp;&nbsp;</span>2018年12月11日 - 16:12</p>
+  <p><span>原始链接:&nbsp;&nbsp;</span><a href="/archives/2e9ee9e4.html" title="基于前端的AngularJS集成BPMN（1）">http://stepthen.site/archives/2e9ee9e4.html</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://stepthen.site/archives/2e9ee9e4.html" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:&nbsp;&nbsp;</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>
+</div>
+<script>
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({
+          title: "",
+          text: '复制成功',
+          icon: "success",
+          showConfirmButton: true
+          });
+        });
+    });
+</script>
+
+
+      
+    </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/BPMN-JS-工作流，AngularJS，前端/" rel="tag"># BPMN.JS,工作流，AngularJS，前端</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/archives/7a6a6b5a.html" rel="next" title="测试文章">
+                测试文章 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/curry.jpg" alt="Stepthen">
+            
+              <p class="site-author-name" itemprop="name">Stepthen</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element" style="margin-top: 30px">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+              
+                <a href="/categories/">
+              
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </a></div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+              
+                <a href="/tags/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate" style="
+    margin-top: 20px;
+    color: #008a76;">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element" style="margin-top: 30px">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/littlebear1996" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/930818lei" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-globe"></i>
+                Amazing Links!
+                <i class="fa  fa-fw fa-globe"></i>
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://music.163.com/#/user/home?id=1352592574" title="网易云音乐" target="_blank">网易云音乐</a>
+                  </li>
+                
+              </ul>
+              
+
+            </div>
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#明人不说暗话，我们开始吧"><span class="nav-number">2.</span> <span class="nav-text">明人不说暗话，我们开始吧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">2.1.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始"><span class="nav-number">2.2.</span> <span class="nav-text">开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-在Angular项目中下载所需model包："><span class="nav-number">2.2.1.</span> <span class="nav-text">1.在Angular项目中下载所需model包：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-同时我们需要配置bpmn-js的样式修改项目中根目录的angular-json文件并且在styles中加上下面梁行代码："><span class="nav-number">2.2.2.</span> <span class="nav-text">2.同时我们需要配置bpmn-js的样式修改项目中根目录的angular.json文件并且在styles中加上下面梁行代码：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-这里也是核心的一步，定义组件bpmn-demo-component-ts，用于bpmn前台绘制页面以及绘制出的任务流导出，通过在init-方法中BpmnModeler，来初始化展示BPMN-JS编辑页面，同时支持将编辑的任务流图BPMN导出XML-saveDiagram-与SVG-saveSVG-，bpmn-demo-component-ts完整代码如下："><span class="nav-number">2.2.3.</span> <span class="nav-text">3.这里也是核心的一步，定义组件bpmn-demo.component.ts，用于bpmn前台绘制页面以及绘制出的任务流导出，通过在init()方法中BpmnModeler，来初始化展示BPMN-JS编辑页面，同时支持将编辑的任务流图BPMN导出XML(saveDiagram)与SVG(saveSVG)，bpmn-demo.component.ts完整代码如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-接下来是编写前台代码bpmn-demo-component-html，其代码如下："><span class="nav-number">2.2.4.</span> <span class="nav-text">4.接下来是编写前台代码bpmn-demo.component.html，其代码如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-src-styles-scss代码如下："><span class="nav-number">2.2.5.</span> <span class="nav-text">5.src/styles.scss代码如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-以上一切完成后我们基于AngularJS的BPMN绘制页面已经完成接下来启动项目进入相应页面即可看到如下页面表示已经成功完成："><span class="nav-number">2.2.6.</span> <span class="nav-text">6.以上一切完成后我们基于AngularJS的BPMN绘制页面已经完成接下来启动项目进入相应页面即可看到如下页面表示已经成功完成：</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+<div id="days" style="margin-top: 50px">
+<script>
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("12/03/2018 15:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+</div>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="heart">❤</span>
+  <span class="author" itemprop="copyrightHolder">Stepthen</span>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'QH7cxWM4XLLPxu9EGh6V2T0F-gzGzoHsz',
+        appKey: 'JKn8mo6p75ocwBChqB5UFA35',
+        placeholder: '客官有什么问题嘛~~',
+        avatar:'/images/curry.jpg',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("QH7cxWM4XLLPxu9EGh6V2T0F-gzGzoHsz", "JKn8mo6p75ocwBChqB5UFA35");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>
