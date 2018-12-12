@@ -127,17 +127,17 @@
 <meta property="og:site_name" content="斯呆芬&#39;s BLOG">
 <meta property="og:description" content="这是一个基于前端AngularJS框架并且集成了BPMN-JS的教程">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://f.cangg.cn:82/data/201812111556494477.png">
-<meta property="og:image" content="https://f.cangg.cn:82/data/201812111557406052.png">
-<meta property="og:image" content="https://f.cangg.cn:82/data/201812111558332215.png">
-<meta property="og:image" content="https://f.cangg.cn:82/data/201812111559327408.jpeg">
-<meta property="og:image" content="https://f.cangg.cn:82/data/201812111559586293.png">
-<meta property="og:image" content="https://f.cangg.cn:82/data/201812111600391067.png">
-<meta property="og:updated_time" content="2018-12-11T08:13:32.627Z">
+<meta property="og:image" content="http://pjlo6aoov.bkt.clouddn.com/3131505-c024cc7077fffed4.png">
+<meta property="og:image" content="http://pjlo6aoov.bkt.clouddn.com/3131505-b7eb3f7b220ae635.png">
+<meta property="og:image" content="http://pjlo6aoov.bkt.clouddn.com/3131505-4c2b9f19e76cae65.png">
+<meta property="og:image" content="http://pjlo6aoov.bkt.clouddn.com/3131505-98444acb94fccf17.jpeg">
+<meta property="og:image" content="http://pjlo6aoov.bkt.clouddn.com/3131505-d407d51a9d59773b.png">
+<meta property="og:image" content="http://pjlo6aoov.bkt.clouddn.com/3131505-4dcf4c4fc4f308c9.png">
+<meta property="og:updated_time" content="2018-12-12T01:47:25.120Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于前端的AngularJS集成BPMN（1）">
 <meta name="twitter:description" content="这是一个基于前端AngularJS框架并且集成了BPMN-JS的教程">
-<meta name="twitter:image" content="https://f.cangg.cn:82/data/201812111556494477.png">
+<meta name="twitter:image" content="http://pjlo6aoov.bkt.clouddn.com/3131505-c024cc7077fffed4.png">
 
 
 
@@ -439,9 +439,9 @@
 <li>BPMN-JS:Business Process Modeling Notation主要针对业务流程建模的，通过这个项目可以通过前台web定义与查看标准的BPMN2.0模型，在这里先贴出BPMN-JS在github的官方<a href="https://github.com/bpmn-io/bpmn-js" target="_blank" rel="noopener">仓库</a>，本教程也是基于官方文档一步一步完成的。</li>
 </ul>
 <p>首先给大家看看bpmn.io官方的绘制界面：</p>
-<p>  <img src="https://f.cangg.cn:82/data/201812111556494477.png" alt="image-20181211145403846"></p>
+<p>  <img src="http://pjlo6aoov.bkt.clouddn.com/3131505-c024cc7077fffed4.png" alt="image-20181211145403846"></p>
 <p>我们的目的是将此绘制界面集成在AngularJS框架下面</p>
-<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>在AngularJS下完成一个页面需要声明三个文件，如图<img src="https://f.cangg.cn:82/data/201812111557406052.png" alt="image-20181211150057430"></p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>在AngularJS下完成一个页面需要声明三个文件，如图<img src="http://pjlo6aoov.bkt.clouddn.com/3131505-b7eb3f7b220ae635.png" alt="image-20181211150057430"></p>
 <p>其中bpmn-demo.component.ts这个是展示与操作核心，通过在init()方法中BpmnModeler，来初始化展示BPMN-JS编辑页面，同时支持将编辑的任务流图BPMN导出XML(saveDiagram)与SVG(saveSVG).</p>
 <ul>
 <li>在Angular项目中下载所需model包：</li>
@@ -451,7 +451,7 @@
 <li>同时我们需要配置bpmn-js的样式修改项目中根目录的angular.json文件并且在styles中加上下面梁行代码：</li>
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"node_modules/bpmn-js/dist/assets/diagram-js.css"</span>,</span><br><span class="line"><span class="string">"node_modules/bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css"</span></span><br></pre></td></tr></table></figure>
-<p><img src="https://f.cangg.cn:82/data/201812111558332215.png" alt="image-20181211151413117"></p>
+<p><img src="http://pjlo6aoov.bkt.clouddn.com/3131505-4c2b9f19e76cae65.png" alt="image-20181211151413117"></p>
 <ul>
 <li>这里也是核心的一步，定义组件bpmn-demo.component.ts，用于bpmn前台绘制页面以及绘制出的任务流导出，通过在init()方法中BpmnModeler，来初始化展示BPMN-JS编辑页面，同时支持将编辑的任务流图BPMN导出XML(saveDiagram)与SVG(saveSVG)，bpmn-demo.component.ts完整代码如下：</li>
 </ul>
@@ -459,9 +459,9 @@
 <p><strong>注意在loan()方法中有一行代码</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> url = <span class="string">'assets/bpmn/newDiagram.bpmn'</span>;</span><br></pre></td></tr></table></figure>
 <p>所以我们需要在assets文件夹下面创建一个bpmn资源文件夹并且初始化一个名为newDiagram.bpmn的工作流文件（XML格式），如果我们没有初始化这个文件最终完成的绘制页面将不能进行工作流绘制就像下图：</p>
-<p><img src="https://f.cangg.cn:82/data/201812111559327408.jpeg" alt="image-20181211152700056"></p>
+<p><img src="http://pjlo6aoov.bkt.clouddn.com/3131505-98444acb94fccf17.jpeg" alt="image-20181211152700056"></p>
 <p>所以我们需要在如上所示路径中初始化一个bpmn文件并且初始设置一个start event，如下图：</p>
-<p><img src="https://f.cangg.cn:82/data/201812111559586293.png" alt="image-20181211153133840"></p>
+<p><img src="http://pjlo6aoov.bkt.clouddn.com/3131505-d407d51a9d59773b.png" alt="image-20181211153133840"></p>
 <ul>
 <li>接下来是编写前台代码bpmn-demo.component.html，其代码如下：</li>
 </ul>
@@ -473,7 +473,7 @@
 <ul>
 <li>以上一切完成后我们基于AngularJS的BPMN绘制页面已经完成接下来启动项目进入相应页面即可看到如下页面表示已经成功完成：</li>
 </ul>
-<p><img src="https://f.cangg.cn:82/data/201812111600391067.png" alt="image-20181211154556095"></p>
+<p><img src="http://pjlo6aoov.bkt.clouddn.com/3131505-4dcf4c4fc4f308c9.png" alt="image-20181211154556095"></p>
 <p><strong><em>如果您成功的出现如上页面，说明基于AngularJS的工作流绘制初步你已经成功告破，接下来的下一篇我会继续集成属性编辑页面以及如何向后台进行部署等相关操作。</em></strong></p>
 
       
@@ -495,7 +495,7 @@
   <p><span>本文标题:&nbsp;&nbsp;</span><a href="/archives/2e9ee9e4.html">基于前端的AngularJS集成BPMN（1）</a></p>
   <p><span>文章作者:&nbsp;&nbsp;</span><a href="/" title="访问 Stepthen 的个人博客">Stepthen</a></p>
   <p><span>发布时间:&nbsp;&nbsp;</span>2018年12月11日 - 09:12</p>
-  <p><span>最后更新:&nbsp;&nbsp;</span>2018年12月11日 - 16:12</p>
+  <p><span>最后更新:&nbsp;&nbsp;</span>2018年12月12日 - 09:12</p>
   <p><span>原始链接:&nbsp;&nbsp;</span><a href="/archives/2e9ee9e4.html" title="基于前端的AngularJS集成BPMN（1）">http://stepthen.site/archives/2e9ee9e4.html</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://stepthen.site/archives/2e9ee9e4.html" aria-label="复制成功！"></i></span>
   </p>
